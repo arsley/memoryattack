@@ -39,9 +39,9 @@ RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 
 # Setup ROPPER
 RUN git clone https://github.com/sashs/Ropper.git /opt/ropper
-RUN pip install capstone filebytes keystone-engine
-RUN cd /opt/ropper && python setup.py install
-
+# RUN pip install capstone filebytes keystone-engine
+# RUN cd /opt/ropper && python setup.py install
+RUN cd /opt/ropper && git submodule init && git submodule update
 
 # Update ENV
 #ENV PATH=$PATH:/opt/powersploit
