@@ -1,5 +1,36 @@
 # Minimal Docker Env for Buffer Overflow Test
 
+## Usage
+
+```shell
+# build environment
+make
+
+# launch and attach container
+make launch-container
+
+# (in container) launch gdb
+$ gdb
+
+# load file which wants to execute
+gdb-peda$ exec-file <path/to/file>
+
+# execute with STDIN
+gdb-peda$ r < <path/to/input/file>
+
+# quit gdb
+gdb-peda$ quit
+
+# IMPORTANT: turn off address randomization of ENV
+$ sudo sysctl -w kernel.randomize_va_space=0
+```
+
+Refer tutorial if you want to do something another...
+
+---
+
+original README:
+
 ## Intro
 
 I followed the tutorial
