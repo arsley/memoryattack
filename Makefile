@@ -6,7 +6,7 @@ dockerbuild: Dockerfile
 	sudo docker build -t 427hax .
 
 launch-container:
-	sudo docker run --privileged -v $(pwd):/427hax-mnt -it 427hax /bin/bash
+	sudo docker run --rm --privileged -v $(pwd):/427hax-mnt -it 427hax /bin/bash
 
 attacks:
 	$(MAKE) -C stacksmash
